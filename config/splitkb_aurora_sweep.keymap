@@ -42,15 +42,28 @@
         };
     };
 
+    behaviors {
+        bhm: bhm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "balanced_homerow_mod";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp R  &kp W       &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I      &kp O           &kp P
-&kp F  &kp S       &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L           &mt RA(BACKSPACE) BACKSPACE
-&kp P  &kp X       &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT         &mt RIGHT_SHIFT RET
-&mo 1  &sk LSHIFT                                                  &mt RGUI SPACE  &mo 2
+&kp Q  &kp W         &kp E        &kp R        &kp T    &kp Y  &kp U        &kp I        &kp O           &kp P
+&kp A  &bhm LCTRL S  &bhm LALT D  &bhm LGUI F  &kp G    &kp H  &bhm RGUI J  &bhm RALT K  &bhm RCTRL L    &mt RA(BACKSPACE) BACKSPACE
+&kp Z  &kp X         &kp C        &kp V        &kp B    &kp N  &kp M        &kp COMMA    &kp DOT         &mt RIGHT_SHIFT RET
+&mo 1  &sk LSHIFT                                                                        &mt RGUI SPACE  &mo 2
             >;
         };
 
