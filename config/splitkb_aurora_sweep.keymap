@@ -60,37 +60,37 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W         &kp E        &kp R        &kp T    &kp Y  &kp U        &kp I        &kp O           &kp P
-&kp A  &bhm LCTRL S  &bhm LALT D  &bhm LGUI F  &kp G    &kp H  &bhm RGUI J  &bhm RALT K  &bhm RCTRL L    &mt RA(BACKSPACE) BACKSPACE
-&kp Z  &kp X         &kp C        &kp V        &kp B    &kp N  &kp M        &kp COMMA    &kp DOT         &mt RIGHT_SHIFT RET
-&mo 1  &sk LSHIFT                                                                        &mt RGUI SPACE  &mo 2
+&kp Q  &kp W         &kp E        &kp R        &kp T    &kp Y  &kp U        &kp I        &kp O         &kp P
+&kp A  &bhm LCTRL S  &bhm LALT D  &bhm LGUI F  &kp G    &kp H  &bhm RGUI J  &bhm RALT K  &bhm RCTRL L  &kp BACKSPACE
+&kp Z  &kp X         &kp C        &kp V        &kp B    &kp N  &kp M        &kp COMMA    &kp DOT       &kp ENTER
+&mo 1  &sk LSHIFT                                                                        &kp SPACE     &mo 2
             >;
         };
 
         left_layer {
             bindings = <
-&kp N1   &kp N7    &kp N8  &kp N9  &kp N5        &kp N6     &kp N7     &kp N8    &kp N9    &kp N0
-&kp TAB  &kp N4    &kp N5  &kp N6  &kp N0        &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp DEL
-&kp ESC  &kp N1    &kp N2  &kp N3  &kp TILDE2    &kp MINUS  &kp GRAVE  &kp LBKT  &kp RBKT  &kp DEL
-&mo 1    &kp LGUI                                                                &kp RGUI  &mo 2
+&none    &kp N7      &kp N8  &kp N9  &kp ASTRK    &kp CARET  &kp AMPS  &kp ASTRK  &kp DQT    &kp SEMI
+&kp TAB  &kp N4      &kp N5  &kp N6  &kp N0       &kp MINUS  &kp LBRC  &kp RBRC   &kp SQT    &kp COLON
+&kp ESC  &kp N1      &kp N2  &kp N3  &kp N0       &kp PLUS   &kp LT    &kp GT     &kp QMARK  &kp SLASH
+&mo 1    &kp LSHIFT                                                               &none      &mo 2
             >;
         };
 
         right_layer {
             bindings = <
-&kp EXCL    &kp AT     &kp HASH  &kp DLLR  &kp PERCENT    &kp CARET  &kp AMPS   &kp ASTERISK  &kp COLON  &kp SEMI
-&kp HASH    &kp LBRC   &kp FSLH  &kp COLN  &kp SCLN       &kp MINUS  &kp EQUAL  &kp UP        &kp RBRC   &trans
-&kp LSHIFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH       &kp UNDER  &kp LEFT   &kp DOWN      &kp RIGHT  &trans
-&mo 3       &kp LCTRL                                                                         &kp SPACE  &mo 2
+&kp EXCL   &kp AT          &kp HASH        &kp DLLR        &kp PERCENT    &none                 &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &none
+&kp GRAVE  &bhm LCTRL SQT  &bhm LALT LPAR  &bhm LGUI RPAR  &kp EQUAL      &kp RG(LEFT_BRACKET)  &kp LEFT     &kp DOWN  &kp RIGHT      &none
+&kp TILDE  &kp UNDER       &kp LBKT        &kp RBKT        &kp MINUS      &none                 &kp TAB      &none     &none          &kp RA(SLASH)
+&mo 3      &kp LSHFT                                                                                                   &none          &mo 2
             >;
         };
 
         tri_layer {
             bindings = <
-&kp NUM_1   &kp NUM_2   &kp NUM_3   &kp NUM_4  &kp NUM_5    &trans  &trans     &trans        &trans      &trans
-&kp F1      &kp F2      &kp F3      &kp F4     &kp F5       &trans  &kp PG_UP  &kp K_VOL_UP  &kp K_MUTE  &trans
-&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6     &kp F7       &trans  &kp PG_DN  &kp K_VOL_DN  &trans      &trans
-&trans      &trans                                                                           &trans      &trans
+&kp LC(LG(Q))  &kp NUM_2   &kp NUM_3   &kp NUM_4  &kp NUM_5    &trans         &trans  &trans        &trans      &trans
+&kp F1         &kp F2      &kp F3      &kp F4     &kp F5       &kp RG(PLUS)   &none   &kp K_VOL_UP  &kp K_MUTE  &trans
+&bt BT_CLR     &bt BT_NXT  &bt BT_PRV  &kp F6     &kp F7       &kp RG(MINUS)  &none   &kp K_VOL_DN  &trans      &trans
+&trans         &trans                                                                               &trans      &trans
             >;
         };
     };
