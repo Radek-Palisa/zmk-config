@@ -70,7 +70,7 @@
         left_layer {
             bindings = <
 &none    &kp N7      &kp N8  &kp N9  &kp ASTRK    &kp CARET  &kp AMPS  &kp ASTRK  &kp DQT    &kp SEMI
-&kp TAB  &kp N4      &kp N5  &kp N6  &kp N0       &kp MINUS  &kp LBRC  &kp RBRC   &kp SQT    &kp COLON
+&kp ESC  &kp N4      &kp N5  &kp N6  &kp N0       &kp MINUS  &kp LBRC  &kp RBRC   &kp SQT    &kp COLON
 &kp ESC  &kp N1      &kp N2  &kp N3  &kp N0       &kp PLUS   &kp LT    &kp GT     &kp QMARK  &kp SLASH
 &mo 1    &kp LSHIFT                                                               &none      &mo 2
             >;
@@ -87,10 +87,10 @@
 
         tri_layer {
             bindings = <
-&kp LC(LG(Q))  &kp NUM_2   &kp NUM_3   &kp NUM_4  &kp NUM_5    &trans         &trans  &trans        &trans      &trans
-&kp F1         &kp F2      &kp F3      &kp F4     &kp F5       &kp RG(PLUS)   &none   &kp K_VOL_UP  &kp K_MUTE  &trans
-&bt BT_CLR     &bt BT_NXT  &bt BT_PRV  &kp F6     &kp F7       &kp RG(MINUS)  &none   &kp K_VOL_DN  &trans      &trans
-&trans         &trans                                                                               &trans      &trans
+&kp LC(LG(Q))  &none       &none       &none  &none    &kp LS(LC(LG(NUMBER_4)))  &kp LS(LG(N5))  &trans        &trans      &trans
+&none          &none       &none       &none  &none    &kp RG(PLUS)              &none           &kp K_VOL_UP  &kp K_MUTE  &trans
+&bt BT_CLR     &bt BT_NXT  &bt BT_PRV  &none  &none    &kp RG(MINUS)             &none           &kp K_VOL_DN  &trans      &trans
+&trans         &trans                                                                                          &trans      &trans
             >;
         };
     };
