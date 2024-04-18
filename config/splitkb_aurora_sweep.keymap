@@ -14,9 +14,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         bhm: bhm {
@@ -67,6 +65,33 @@
 &none          &none       &none       &none  &none    &kp RG(PLUS)              &none           &kp K_VOL_UP  &kp K_MUTE  &trans
 &bt BT_CLR     &bt BT_NXT  &bt BT_PRV  &none  &none    &kp RG(MINUS)             &none           &kp K_VOL_DN  &trans      &trans
 &trans         &trans                                                                                          &trans      &trans
+            >;
+        };
+
+        win_default {
+            bindings = <
+&kp Q  &kp W            &kp E        &kp R         &kp T    &kp Y  &kp U         &kp I        &kp O        &kp P
+&kp A  &bhm LEFT_WIN S  &bhm LALT D  &bhm LCTRL F  &kp G    &kp H  &bhm RCTRL J  &bhm RALT K  &bhm RWIN L  &kp BSPC
+&kp Z  &kp X            &kp C        &kp V         &kp B    &kp N  &kp M         &kp COMMA    &kp DOT      &kp ENTER
+&mo 5  &sk LEFT_SHIFT                                                                         &kp SPACE    &mo 6
+            >;
+        };
+
+        win_left {
+            bindings = <
+&trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&mo 5   &kp LSHFT                                                    &trans  &trans
+            >;
+        };
+
+        win_right {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans                                                    &trans  &trans
             >;
         };
     };
