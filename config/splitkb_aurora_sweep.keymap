@@ -79,14 +79,23 @@
 
         win_left {
             bindings = <
-&trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&mo 5   &kp LSHFT                                                    &trans  &trans
+&none       &kp N7        &kp N8        &kp N9         &kp ASTRK    &kp CARET  &kp AMPERSAND    &kp ASTRK       &kp DOUBLE_QUOTES  &kp SEMICOLON
+&kp ESCAPE  &bhm LWIN N4  &bhm LALT N5  &bhm LCTRL N6  &kp N0       &kp BSLH   &bhm RCTRL LBRC  &bhm RALT RBRC  &bhm RWIN SQT      &kp COLON
+&kp ESC     &kp N1        &kp N2        &kp N3         &kp N0       &kp PLUS   &kp LT           &kp GT          &kp QMARK          &kp SLASH
+&mo 5       &kp LSHFT                                                                                           &none              &mo 6
             >;
         };
 
         win_right {
+            bindings = <
+&kp EXCL   &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp LC(BSLH)
+&kp GRAVE  &bhm LWIN PIPE  &bhm LALT LPAR  &bhm LCTRL RPAR  &kp EQUAL    &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
+&kp TILDE  &kp UNDER       &kp LBKT        &kp RBKT         &kp MINUS    &none          &kp TAB      &kp LC(LBKT)  &kp LC(RBKT)   &kp RA(SLASH)
+&mo 7      &kp LSHFT                                                                                               &none          &mo 6
+            >;
+        };
+
+        win_tri {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
