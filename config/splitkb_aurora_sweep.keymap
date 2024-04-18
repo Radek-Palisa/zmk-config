@@ -61,7 +61,7 @@
 
         tri_layer {
             bindings = <
-&kp LC(LG(Q))  &none       &none       &none  &none    &kp LS(LC(LG(NUMBER_4)))  &kp LS(LG(N5))  &trans        &trans      &trans
+&kp LC(LG(Q))  &none       &to 4       &none  &kp M    &kp LS(LC(LG(NUMBER_4)))  &kp LS(LG(N5))  &trans        &trans      &trans
 &none          &none       &none       &none  &none    &kp RG(PLUS)              &none           &kp K_VOL_UP  &kp K_MUTE  &trans
 &bt BT_CLR     &bt BT_NXT  &bt BT_PRV  &none  &none    &kp RG(MINUS)             &none           &kp K_VOL_DN  &trans      &trans
 &trans         &trans                                                                                          &trans      &trans
@@ -97,10 +97,10 @@
 
         win_tri {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans                                                    &trans  &trans
+&kp LG(L)   &none       &to 0       &none  &kp W    &kp PRINTSCREEN  &none  &none              &none       &none
+&none       &none       &none       &none  &none    &kp LC(PLUS)     &none  &kp K_VOLUME_UP    &kp K_MUTE  &none
+&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &none  &none    &kp LC(MINUS)    &none  &kp K_VOLUME_DOWN  &none       &none
+&trans      &trans                                                                             &trans      &trans
             >;
         };
     };
