@@ -14,7 +14,23 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        to_mac_tri_layer {
+            bindings = <&to 3>;
+            key-positions = <24 25>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;
+        };
+
+        to_win_tri_layer {
+            bindings = <&to 7>;
+            key-positions = <24 25>;
+            require-prior-idle-ms = <100>;
+            layers = <4>;
+        };
+    };
 
     behaviors {
         bhm: bhm {
@@ -32,21 +48,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        mac_default {
             bindings = <
 &kp Q  &kp W         &kp E        &kp R        &kp T    &kp Y  &kp U        &kp I        &kp O         &kp P
 &kp A  &bhm LCTRL S  &bhm LALT D  &bhm LGUI F  &kp G    &kp H  &bhm RGUI J  &bhm RALT K  &bhm RCTRL L  &kp BACKSPACE
 &kp Z  &kp X         &kp C        &kp V        &kp B    &kp N  &kp M        &kp COMMA    &kp DOT       &kp ENTER
-&mo 1  &sk LSHIFT                                                                        &kp SPACE     &mo 2
+&sl 1  &sk LSHIFT                                                                        &kp SPACE     &sl 2
             >;
         };
 
         left_layer {
             bindings = <
-&none    &kp N7         &kp N8        &kp N9              &kp ASTRK    &kp CARET  &kp AMPS        &kp ASTRK       &kp DQT         &kp SEMI
-&kp ESC  &bhm LCTRL N4  &bhm LALT N5  &bhm LGUI NUMBER_6  &kp N0       &kp BSLH   &bhm LGUI LBRC  &bhm RALT RBRC  &bhm RCTRL SQT  &kp COLON
-&kp ESC  &kp N1         &kp N2        &kp N3              &kp N0       &kp PLUS   &kp LT          &kp GT          &kp QMARK       &kp SLASH
-&mo 1    &kp LSHIFT                                                                                               &none           &mo 2
+&kp N0   &kp N7         &kp N8        &kp N9              &kp ASTRK    &kp CARET  &kp AMPS        &kp ASTRK       &kp DQT         &kp SEMI
+&kp ESC  &bhm LCTRL N4  &bhm LALT N5  &bhm LGUI NUMBER_6  &kp EQUAL    &kp BSLH   &bhm LGUI LBRC  &bhm RALT RBRC  &bhm RCTRL SQT  &kp COLON
+&kp N0   &kp N1         &kp N2        &kp N3              &kp MINUS    &kp PLUS   &kp LT          &kp GT          &kp QMARK       &kp SLASH
+&sl 1    &to 0                                                                                                    &kp SPACE       &to 1
             >;
         };
 
@@ -55,7 +71,7 @@
 &kp EXCL   &kp AT           &kp HASH        &kp DLLR        &kp PERCENT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp RG(BSLH)
 &kp GRAVE  &bhm LCTRL PIPE  &bhm LALT LPAR  &bhm LGUI RPAR  &kp EQUAL      &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
 &kp TILDE  &kp UNDER        &kp LBKT        &kp RBKT        &kp MINUS      &none          &kp TAB      &kp RG(LBKT)  &kp RG(RBKT)   &kp RA(SLASH)
-&mo 3      &kp LSHFT                                                                                                 &none          &mo 2
+&to 2      &kp LSHFT                                                                                                 &to 0          &sl 2
             >;
         };
 
@@ -64,7 +80,7 @@
 &kp LC(LG(Q))  &none       &to 4       &none  &kp M    &kp LS(LC(LG(NUMBER_4)))  &kp LS(LG(N5))  &trans        &trans      &trans
 &none          &none       &none       &none  &none    &kp RG(PLUS)              &none           &kp K_VOL_UP  &kp K_MUTE  &trans
 &bt BT_CLR     &bt BT_NXT  &bt BT_PRV  &none  &none    &kp RG(MINUS)             &none           &kp K_VOL_DN  &trans      &trans
-&trans         &trans                                                                                          &trans      &trans
+&to 0          &none                                                                                           &none       &none
             >;
         };
 
@@ -73,16 +89,16 @@
 &kp Q  &kp W            &kp E        &kp R         &kp T    &kp Y  &kp U         &kp I        &kp O        &kp P
 &kp A  &bhm LEFT_WIN S  &bhm LALT D  &bhm LCTRL F  &kp G    &kp H  &bhm RCTRL J  &bhm RALT K  &bhm RWIN L  &kp BSPC
 &kp Z  &kp X            &kp C        &kp V         &kp B    &kp N  &kp M         &kp COMMA    &kp DOT      &kp ENTER
-&mo 5  &sk LEFT_SHIFT                                                                         &kp SPACE    &mo 6
+&sl 5  &sk LEFT_SHIFT                                                                         &kp SPACE    &sl 6
             >;
         };
 
         win_left {
             bindings = <
-&none       &kp N7        &kp N8        &kp N9         &kp ASTRK    &kp CARET  &kp AMPERSAND    &kp ASTRK       &kp DOUBLE_QUOTES  &kp SEMICOLON
-&kp ESCAPE  &bhm LWIN N4  &bhm LALT N5  &bhm LCTRL N6  &kp N0       &kp BSLH   &bhm RCTRL LBRC  &bhm RALT RBRC  &bhm RWIN SQT      &kp COLON
-&kp ESC     &kp N1        &kp N2        &kp N3         &kp N0       &kp PLUS   &kp LT           &kp GT          &kp QMARK          &kp SLASH
-&mo 5       &kp LSHFT                                                                                           &none              &mo 6
+&kp N0      &kp N7        &kp N8        &kp N9         &kp ASTRK    &kp CARET  &kp AMPERSAND    &kp ASTRK       &kp DOUBLE_QUOTES  &kp SEMICOLON
+&kp ESCAPE  &bhm LWIN N4  &bhm LALT N5  &bhm LCTRL N6  &kp EQUAL    &kp BSLH   &bhm RCTRL LBRC  &bhm RALT RBRC  &bhm RWIN SQT      &kp COLON
+&kp N0      &kp N1        &kp N2        &kp N3         &kp MINUS    &kp PLUS   &kp LT           &kp GT          &kp QMARK          &kp SLASH
+&sl 5       &to 4                                                                                               &kp SPACE          &to 5
             >;
         };
 
@@ -91,7 +107,7 @@
 &kp EXCL   &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp LC(BSLH)
 &kp GRAVE  &bhm LWIN PIPE  &bhm LALT LPAR  &bhm LCTRL RPAR  &kp EQUAL    &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
 &kp TILDE  &kp UNDER       &kp LBKT        &kp RBKT         &kp MINUS    &none          &kp TAB      &kp LC(LBKT)  &kp LC(RBKT)   &kp RA(SLASH)
-&mo 7      &kp LSHFT                                                                                               &none          &mo 6
+&to 6      &kp LSHFT                                                                                               &to 4          &sl 6
             >;
         };
 
@@ -100,7 +116,7 @@
 &kp LG(L)   &none       &to 0       &none  &kp W    &kp PRINTSCREEN  &none  &none              &none       &none
 &none       &none       &none       &none  &none    &kp LC(PLUS)     &none  &kp K_VOLUME_UP    &kp K_MUTE  &none
 &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &none  &none    &kp LC(MINUS)    &none  &kp K_VOLUME_DOWN  &none       &none
-&trans      &trans                                                                             &trans      &trans
+&to 4       &none                                                                              &none       &none
             >;
         };
     };
