@@ -13,6 +13,8 @@
     // tapping_term_ms = <200>;
 };
 
+&sl { /delete-property/ quick-release; };
+
 / {
     combos {
         compatible = "zmk,combos";
