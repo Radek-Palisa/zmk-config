@@ -13,8 +13,6 @@
     // tapping_term_ms = <200>;
 };
 
-&sl { /delete-property/ quick-release; };
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -57,34 +55,6 @@
     };
 
     macros {
-        mac_keep_layer_left: mac_keep_layer_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F22 &to 1>;
-            label = "MAC_KEEP_LAYER_LEFT";
-        };
-
-        mac_keep_layer_right: mac_keep_layer_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F22 &to 2>;
-            label = "MAC_KEEP_LAYER_RIGHT";
-        };
-
-        win_keep_layer_left: win_keep_layer_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F22 &to 5>;
-            label = "WIN_KEEP_LAYER_LEFT";
-        };
-
-        win_keep_layer_right: win_keep_layer_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F22 &to 6>;
-            label = "WIN_KEEP_LAYER_RIGHT";
-        };
-
         delete_line: delete_line {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -119,16 +89,16 @@
 &kp N0   &kp N7          &kp N8        &kp N9              &kp ASTRK    &kp CARET  &kp AMPS        &kp ASTRK       &kp DQT         &kp SEMI
 &kp ESC  &bhm LCTRL N4   &bhm LALT N5  &bhm LGUI NUMBER_6  &kp EQUAL    &kp BSLH   &bhm LGUI LBRC  &bhm RALT RBRC  &bhm RCTRL SQT  &kp COLON
 &kp N0   &kp N1          &kp N2        &kp N3              &kp MINUS    &kp PLUS   &kp LT          &kp GT          &kp QMARK       &kp SLASH
-&to 0    &sk LEFT_SHIFT                                                                                            &kp SPACE       &mac_keep_layer_left
+&sl 1    &sk LEFT_SHIFT                                                                                            &kp SPACE       &sl 2
             >;
         };
 
         right_layer {
             bindings = <
-&kp EXCL               &kp AT           &kp HASH        &kp DLLR        &kp PERCENT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp RG(BSLH)
-&kp GRAVE              &bhm LCTRL PIPE  &bhm LALT LPAR  &bhm LGUI RPAR  &kp EQUAL      &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
-&kp TILDE              &kp UNDER        &kp LBKT        &kp RBKT        &kp MINUS      &none          &kp TAB      &kp RG(LBKT)  &kp RG(RBKT)   &kp RA(SLASH)
-&mac_keep_layer_right  &kp LSHFT                                                                                                 &kp SPACE      &to 0
+&kp EXCL   &kp AT           &kp HASH        &kp DLLR        &kp PERCENT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp RG(BSLH)
+&kp GRAVE  &bhm LCTRL PIPE  &bhm LALT LPAR  &bhm LGUI RPAR  &kp EQUAL      &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
+&kp TILDE  &kp UNDER        &kp LBKT        &kp RBKT        &kp MINUS      &none          &kp TAB      &kp RG(LBKT)  &kp RG(RBKT)   &kp RA(SLASH)
+&sl 1      &kp LSHFT                                                                                                 &kp SPACE      &sl 2
             >;
         };
 
@@ -152,19 +122,19 @@
 
         win_left {
             bindings = <
-&kp N0      &kp N7        &kp N8        &kp N9         &kp ASTRK    &kp CARET  &kp AMPERSAND    &kp ASTRK       &kp DOUBLE_QUOTES  &kp SEMICOLON
-&kp ESCAPE  &bhm LWIN N4  &bhm LALT N5  &bhm LCTRL N6  &kp EQUAL    &kp BSLH   &bhm RCTRL LBRC  &bhm RALT RBRC  &bhm RWIN SQT      &kp COLON
-&kp N0      &kp N1        &kp N2        &kp N3         &kp MINUS    &kp PLUS   &kp LT           &kp GT          &kp QMARK          &kp SLASH
-&sl 5       &to 4                                                                                               &kp SPACE          &win_keep_layer_left
+&kp N0      &kp N7          &kp N8        &kp N9         &kp ASTRK    &kp CARET  &kp AMPERSAND    &kp ASTRK       &kp DOUBLE_QUOTES  &kp SEMICOLON
+&kp ESCAPE  &bhm LWIN N4    &bhm LALT N5  &bhm LCTRL N6  &kp EQUAL    &kp BSLH   &bhm RCTRL LBRC  &bhm RALT RBRC  &bhm RWIN SQT      &kp COLON
+&kp N0      &kp N1          &kp N2        &kp N3         &kp MINUS    &kp PLUS   &kp LT           &kp GT          &kp QMARK          &kp SLASH
+&sl 5       &sk LEFT_SHIFT                                                                                        &kp SPACE          &sl 6
             >;
         };
 
         win_right {
             bindings = <
-&kp EXCL               &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp LC(BSLH)
-&kp GRAVE              &bhm LWIN PIPE  &bhm LALT LPAR  &bhm LCTRL RPAR  &kp EQUAL    &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
-&kp TILDE              &kp UNDER       &kp LBKT        &kp RBKT         &kp MINUS    &none          &kp TAB      &kp LC(LBKT)  &kp LC(RBKT)   &kp RA(SLASH)
-&mac_keep_layer_right  &kp LSHFT                                                                                               &to 4          &sl 6
+&kp EXCL   &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp LC(BSLH)
+&kp GRAVE  &bhm LWIN PIPE  &bhm LALT LPAR  &bhm LCTRL RPAR  &kp EQUAL    &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
+&kp TILDE  &kp UNDER       &kp LBKT        &kp RBKT         &kp MINUS    &none          &kp TAB      &kp LG(LBKT)  &kp LG(RBKT)   &kp RA(SLASH)
+&sl 5      &kp LSHFT                                                                                               &kp SPACE      &sl 6
             >;
         };
 
