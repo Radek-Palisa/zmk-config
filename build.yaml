@@ -22,3 +22,5 @@ include:
     shield: splitkb_aurora_sweep_left
   - board: nice_nano//zmk
     shield: splitkb_aurora_sweep_right
+  - board: nice_nano//zmk
+    shield: settings_reset
