@@ -23,13 +23,6 @@
             layers = <0>;
             require-prior-idle-ms = <100>;
         };
-
-        to_win_tri_layer {
-            bindings = <&to 7>;
-            key-positions = <24 25>;
-            require-prior-idle-ms = <100>;
-            layers = <4>;
-        };
     };
 
     behaviors {
@@ -42,33 +35,6 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "balanced";
-        };
-
-        win_bcsp: win_bcsp {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WIN_BCSP";
-            bindings = <&kp BACKSPACE>, <&delete_line>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-        };
-    };
-
-    macros {
-        delete_line: delete_line {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp HOME>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp BACKSPACE>;
-
-            label = "DELETE_LINE";
         };
     };
 
@@ -104,46 +70,10 @@
 
         tri_layer {
             bindings = <
-&kp LC(LG(Q))  &none       &to 4       &none  &kp M    &kp LS(LC(LG(NUMBER_4)))  &kp LS(LG(N5))  &trans        &trans      &trans
+&kp LC(LG(Q))  &none       &none       &none  &kp M    &kp LS(LC(LG(NUMBER_4)))  &kp LS(LG(N5))  &trans        &trans      &trans
 &none          &none       &none       &none  &none    &kp RG(PLUS)              &none           &kp K_VOL_UP  &kp K_MUTE  &trans
 &bt BT_CLR     &bt BT_NXT  &bt BT_PRV  &none  &none    &kp RG(MINUS)             &none           &kp K_VOL_DN  &trans      &trans
 &to 0          &none                                                                                           &none       &none
-            >;
-        };
-
-        win_default {
-            bindings = <
-&kp Q  &kp W            &kp E        &kp R         &kp T    &kp Y  &kp U         &kp I        &kp O        &kp P
-&kp A  &bhm LEFT_WIN S  &bhm LALT D  &bhm LCTRL F  &kp G    &kp H  &bhm RCTRL J  &bhm RALT K  &bhm RWIN L  &win_bcsp
-&kp Z  &kp X            &kp C        &kp V         &kp B    &kp N  &kp M         &kp COMMA    &kp DOT      &kp ENTER
-&sl 5  &sk LEFT_SHIFT                                                                         &kp SPACE    &sl 6
-            >;
-        };
-
-        win_left {
-            bindings = <
-&kp N0      &kp N7          &kp N8        &kp N9         &kp ASTRK    &kp CARET  &kp AMPERSAND    &kp ASTRK       &kp DOUBLE_QUOTES  &kp SEMICOLON
-&kp ESCAPE  &bhm LWIN N4    &bhm LALT N5  &bhm LCTRL N6  &kp EQUAL    &kp BSLH   &bhm RCTRL LBRC  &bhm RALT RBRC  &bhm RWIN SQT      &kp COLON
-&kp N0      &kp N1          &kp N2        &kp N3         &kp MINUS    &kp PLUS   &kp LT           &kp GT          &kp QMARK          &kp SLASH
-&sl 5       &sk LEFT_SHIFT                                                                                        &kp SPACE          &sl 6
-            >;
-        };
-
-        win_right {
-            bindings = <
-&kp EXCL   &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp LC(BSLH)
-&kp GRAVE  &bhm LWIN PIPE  &bhm LALT LPAR  &bhm LCTRL RPAR  &kp EQUAL    &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
-&kp TILDE  &kp UNDER       &kp LBKT        &kp RBKT         &kp MINUS    &none          &kp TAB      &kp LG(LBKT)  &kp LG(RBKT)   &kp RA(SLASH)
-&sl 5      &kp LSHFT                                                                                               &kp SPACE      &sl 6
-            >;
-        };
-
-        win_tri {
-            bindings = <
-&kp LG(L)   &none       &to 0       &none  &kp W    &kp PRINTSCREEN  &none  &none              &none       &none
-&none       &none       &none       &none  &none    &kp LC(PLUS)     &none  &kp K_VOLUME_UP    &kp K_MUTE  &none
-&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &none  &none    &kp LC(MINUS)    &none  &kp K_VOLUME_DOWN  &none       &none
-&to 4       &none                                                                              &none       &none
             >;
         };
     };
