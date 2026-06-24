@@ -78,3 +78,49 @@
         };
     };
 };
+
+/*
+ * ============================ VISUAL LAYOUT ============================
+ *
+ * Legend:
+ *   Home-row mods (held)  →  ⌃ Ctrl   ⌥ Alt   ⌘ Cmd/Gui   ⇧ Shift
+ *   e.g. "S⌃" = tap S, hold Ctrl.   Symbol shown is the TAP action.
+ *   ·  = none/disabled        ▽  = transparent (falls through to layer below)
+ *   L1 / L2 = momentary/sticky layer switch       →L0 = back to base layer
+ *
+ *
+ * ---- mac_default (base) ----
+ *
+ *   Q    | W    | E    | R    | T    ||  Y    | U    | I    | O    | P
+ *   A    | S⌃   | D⌥   | F⌘   | G    ||  H    | J⌘   | K⌥   | L⌃   | BSPC
+ *   Z    | X    | C    | V    | B    ||  N    | M    | ,    | .    | ENT
+ *                        L1   | ⇧    ||  SPC  | L2
+ *
+ *
+ * ---- left_layer (L1: numbers / symbols) ----
+ *
+ *   0    | 7    | 8    | 9    | *    ||  ^    | &    | *    | "    | ;
+ *   ESC  | 4⌃   | 5⌥   | 6⌘   | =    ||  \    | {⌘   | }⌥   | '⌃   | :
+ *   0    | 1    | 2    | 3    | -    ||  +    | <    | >    | ?    | /
+ *                        L1   | ⇧    ||  SPC  | L2
+ *
+ *
+ * ---- right_layer (L2: symbols / navigation) ----
+ *
+ *   !      | @      | #      | $      | %      ||  Ctrl+` | PgUp   | ↑      | PgDn   | Gui+\
+ *   `      | pipe⌃  | (⌥     | )⌘     | =      ||  ·      | ←      | ↓      | →      | ·
+ *   ~      | _      | [      | ]      | -      ||  ·      | TAB    | Gui+[  | Gui+]  | Alt+/
+ *                              L1     | ⇧      ||  SPC    | L2
+ *
+ *
+ * ---- tri_layer (L3: media / bluetooth / system) ----
+ *
+ *   C+G+Q   | ·       | ·       | ·       | M       ||  S+C+G+4 | S+G+5   | ▽       | ▽       | ▽
+ *   ·       | ·       | ·       | ·       | ·       ||  Gui++   | ·       | Vol+    | Mute    | ▽
+ *   BTclr   | BTnxt   | BTprv   | ·       | ·       ||  Gui+-   | ·       | Vol-    | ▽       | ▽
+ *                                 →L0     | ·       ||  ·       | ·
+ *
+ *   (S+C+G+4 / S+G+5 = macOS screenshot shortcuts)
+ *
+ * ======================================================================
+ */
