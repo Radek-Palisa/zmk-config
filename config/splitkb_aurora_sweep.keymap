@@ -62,7 +62,7 @@
         right_layer {
             bindings = <
 &kp EXCL   &kp AT           &kp HASH        &kp DLLR        &kp PERCENT    &kp LC(GRAVE)  &kp PAGE_UP  &kp UP        &kp PAGE_DOWN  &kp RG(BSLH)
-&kp GRAVE  &bhm LCTRL PIPE  &bhm LALT LPAR  &bhm LGUI RPAR  &kp EQUAL      &none          &kp LEFT     &kp DOWN      &kp RIGHT      &none
+&kp GRAVE  &bhm LCTRL PIPE  &bhm LALT LPAR  &bhm LGUI RPAR  &kp EQUAL      &kp LA(LEFT)   &kp LEFT     &kp DOWN      &kp RIGHT      &kp LA(RIGHT)
 &kp TILDE  &kp UNDER        &kp LBKT        &kp RBKT        &kp MINUS      &none          &kp TAB      &kp RG(LBKT)  &kp RG(RBKT)   &kp RA(SLASH)
 &sl 1      &kp LSHFT                                                                                                 &kp SPACE      &sl 2
             >;
@@ -108,7 +108,7 @@
  * ---- right_layer (L2: symbols / navigation) ----
  *
  *   !      | @      | #      | $      | %      ||  Ctrl+` | PgUp   | ↑      | PgDn   | Gui+\
- *   `      | pipe⌃  | (⌥     | )⌘     | =      ||  ·      | ←      | ↓      | →      | ·
+ *   `      | pipe⌃  | (⌥     | )⌘     | =      ||  ⌥←     | ←      | ↓      | →      | ⌥→
  *   ~      | _      | [      | ]      | -      ||  ·      | TAB    | Gui+[  | Gui+]  | Alt+/
  *                              L1     | ⇧      ||  SPC    | L2
  *
